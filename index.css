@@ -4,7 +4,7 @@
 
 @font-face {
   font-family: 'HarmonyOS Sans SC';
-  src: url('https://assets.hcaor.org/assets/fonts/hmos/HarmonyOS_Sans_SC_Thin.ttf') format('truetype');
+  src: url('https://assets.hcaor.org/fonts/hmos/HarmonyOS_Sans_SC_Thin.ttf') format('truetype');
   font-weight: 100;
   font-style: normal;
   font-display: swap;
@@ -12,7 +12,7 @@
 
 @font-face {
   font-family: 'HarmonyOS Sans SC';
-  src: url('https://assets.hcaor.org/assets/fonts/hmos/HarmonyOS_Sans_SC_Light.ttf') format('truetype');
+  src: url('https://assets.hcaor.org/fonts/hmos/HarmonyOS_Sans_SC_Light.ttf') format('truetype');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -20,7 +20,7 @@
 
 @font-face {
   font-family: 'HarmonyOS Sans SC';
-  src: url('https://assets.hcaor.org/assets/fonts/hmos/HarmonyOS_Sans_SC_Regular.ttf') format('truetype');
+  src: url('https://assets.hcaor.org/fonts/hmos/HarmonyOS_Sans_SC_Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -28,7 +28,7 @@
 
 @font-face {
   font-family: 'HarmonyOS Sans SC';
-  src: url('https://assets.hcaor.org/assets/fonts/hmos/HarmonyOS_Sans_SC_Medium.ttf') format('truetype');
+  src: url('https://assets.hcaor.org/fonts/hmos/HarmonyOS_Sans_SC_Medium.ttf') format('truetype');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -36,7 +36,7 @@
 
 @font-face {
   font-family: 'HarmonyOS Sans SC';
-  src: url('https://assets.hcaor.org/assets/fonts/hmos/HarmonyOS_Sans_SC_Bold.ttf') format('truetype');
+  src: url('https://assets.hcaor.org/fonts/hmos/HarmonyOS_Sans_SC_Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -44,7 +44,7 @@
 
 @font-face {
   font-family: 'HarmonyOS Sans SC';
-  src: url('https://assets.hcaor.org/assets/fonts/hmos/HarmonyOS_Sans_SC_Black.ttf') format('truetype');
+  src: url('https://assets.hcaor.org/fonts/hmos/HarmonyOS_Sans_SC_Black.ttf') format('truetype');
   font-weight: 900;
   font-style: normal;
   font-display: swap;
