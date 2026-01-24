@@ -8,7 +8,7 @@ This project is a high-performance, visually stylized landing page for "Endfield
 - **Build Tool:** Vite (ESNext target)
 - **Language:** TypeScript (Strict mode, ES2022)
 - **Styling:** Tailwind CSS (Local PostCSS configuration)
-- **Typography:** HarmonyOS Sans SC (Local assets), JetBrains Mono (Google Fonts)
+- **Typography:** HarmonyOS Sans SC (CDN assets), JetBrains Mono (Google Fonts)
 - **Animation:** Framer Motion (`LazyMotion`, `useScroll`, `useSpring`)
 - **Icons:** Lucide React
 
