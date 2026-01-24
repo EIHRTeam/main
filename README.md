@@ -1,4 +1,4 @@
-# STRATEGY_GROUP Landing Page
+# EIHRTeam Landing Page
 
 ## Project Overview
 
