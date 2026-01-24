@@ -78,4 +78,4 @@ Project configuration is managed via `vite.config.ts`. Path aliases are configur
 
 ## License
 
-Proprietary software. All rights reserved by STRATEGY_GROUP.
+Proprietary software. All rights reserved by EIHRTeam.
