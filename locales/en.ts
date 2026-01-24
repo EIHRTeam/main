@@ -35,7 +35,7 @@ export const en: ContentData = {
     title: "LATEST LOGS",
     readMore: "Read More",
     viewAll: "VIEW ALL LOGS",
-    blogLink: "https://blog.eihrteam.org",
+    blogLink: "/blog",
     posts: [
       { id: 1, date: "2023.10.24", title: "V4.5 Update Mechanics Analysis", excerpt: "The new version brings not only new characters but also fundamental poise changes..." },
       { id: 2, date: "2023.10.15", title: "Abyss Floor 12 Full Star Guide", excerpt: "For the current high-pressure environment, we recommend these three teams..." },

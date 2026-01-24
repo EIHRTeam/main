@@ -35,7 +35,7 @@ export const zh: ContentData = {
     title: "最新情报",
     readMore: "阅读全文",
     viewAll: "查看更多情报",
-    blogLink: "https://blog.eihrteam.org",
+    blogLink: "/blog",
     posts: [
       { id: 1, date: "2025.12.24", title: "V4.5 版本前瞻与机制解析", excerpt: "新版本不仅带来了新角色，底层的韧性机制也发生了根本性变化..." },
       { id: 2, date: "2026.01.26", title: "深渊第12层满星通关指南", excerpt: "针对本期深渊的高压环境，我们推荐以下三套阵容..." },

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import GlitchElement from './GlitchElement';
 import Section from './Section';
 import { ContentData } from '../types';
@@ -40,15 +41,13 @@ const Blog: React.FC<BlogProps> = ({ content }) => {
       </div>
 
       <GlitchElement delay={0.3} className="mt-12 flex justify-center">
-        <a 
-          href={content.blogLink}
-          target="_blank"
-          rel="noopener noreferrer"
+        <Link 
+          to={content.blogLink}
           className="group relative px-8 py-4 bg-black text-white font-bold font-mono text-sm uppercase tracking-widest overflow-hidden hover:text-black transition-colors duration-300"
         >
           <span className="relative z-10">{content.viewAll}</span>
           <div className="absolute inset-0 bg-brand translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-300"></div>
-        </a>
+        </Link>
       </GlitchElement>
     </Section>
   );
