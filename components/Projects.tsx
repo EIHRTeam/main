@@ -3,6 +3,7 @@ import { ArrowUpRight } from 'lucide-react';
 import GlitchElement from './GlitchElement';
 import Section from './Section';
 import { ContentData } from '../types';
+import colorBar from '../assets/color-bar.1f0aa038.png';
 
 interface ProjectsProps {
   content: ContentData['projects'];
@@ -12,6 +13,9 @@ const Projects: React.FC<ProjectsProps> = ({ content }) => {
   return (
     <Section id="projects" className="bg-subtle/50 rounded-3xl my-10">
       <GlitchElement>
+        <div className="mb-8">
+          <img src={colorBar} alt="" className="w-full h-2 object-cover opacity-80" />
+        </div>
         <div className="flex justify-between items-end mb-12">
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight uppercase">{content.title}</h2>
           <span className="hidden md:block font-mono text-xs">/ INDEX_02</span>
