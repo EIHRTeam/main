@@ -13,16 +13,16 @@ const About: React.FC<AboutProps> = ({ content }) => {
     <Section id="about" className="pt-20">
       <GlitchElement>
         <div className="flex gap-12">
-           {/* Vertical Color Bar - Rotated and moved down for full display */}
-           <div className="hidden md:block w-4 flex-shrink-0 relative pt-12">
-             <div className="absolute top-12 left-0 w-[280px] origin-top-left rotate-90">
-                <img 
-                  src={colorBar} 
-                  alt="" 
-                  className="w-full h-auto object-contain"
-                />
-             </div>
-           </div>
+           {/* Vertical Color Bar - Repeating to show full pattern */}
+           <div 
+             className="hidden md:block w-4 flex-shrink-0"
+             style={{ 
+               backgroundImage: `url(${colorBar})`,
+               backgroundRepeat: 'repeat-y',
+               backgroundSize: '100% auto',
+               backgroundPosition: 'center'
+             }}
+           />
            
            <div className="grid md:grid-cols-2 gap-8 pl-4 md:pl-0 border-l-4 border-black md:border-none">
             {/* Mobile shows border-l, Desktop shows image bar */}
