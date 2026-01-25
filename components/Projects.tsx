@@ -13,8 +13,8 @@ const Projects: React.FC<ProjectsProps> = ({ content }) => {
   return (
     <Section id="projects" className="bg-subtle/50 rounded-3xl my-10">
       <GlitchElement>
-        <div className="mb-8">
-          <img src={colorBar} alt="" className="w-full h-2 object-cover opacity-80" />
+        <div className="mb-6 h-[4px] overflow-hidden">
+          <img src={colorBar} alt="" className="w-full h-auto min-h-[4px] object-top" />
         </div>
         <div className="flex justify-between items-end mb-12">
           <h2 className="text-4xl md:text-5xl font-bold tracking-tight uppercase">{content.title}</h2>
