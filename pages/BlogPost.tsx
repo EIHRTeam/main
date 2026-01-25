@@ -4,7 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import Navbar from '../components/Navbar';
 import GlitchElement from '../components/GlitchElement';
 import { ContentData, Language } from '../types';
-import { ArrowLeft } from 'lucide-react';
+import { X } from 'lucide-react';
 
 interface BlogPostProps {
   content: ContentData['blog'];
@@ -38,32 +38,50 @@ const BlogPost: React.FC<BlogPostProps> = ({ content, navContent, lang, setLang,
         scrollToSection={scrollToSection} 
       />
       
-      <div className="pt-32 pb-20 max-w-4xl mx-auto px-6">
+      <div className="pt-32 pb-20 max-w-5xl mx-auto px-6 md:px-12">
         <GlitchElement>
-            <Link to="/blog" className="inline-flex items-center gap-2 font-mono text-sm text-gray-500 hover:text-black mb-8 transition-colors">
-                <ArrowLeft size={16} /> BACK_TO_ARCHIVE
-            </Link>
-        </GlitchElement>
-
-        <article>
-            <GlitchElement delay={0.1}>
-                <header className="mb-12 border-b-4 border-black pb-8">
-                    <div className="flex items-center gap-4 font-mono text-sm text-gray-500 mb-4">
-                        <span className="w-2 h-2 bg-brand inline-block"></span>
-                        <span>LOG_ID: {String(post.id).padStart(3, '0')}</span>
-                        <span>//</span>
-                        <span>{post.date}</span>
-                    </div>
-                    <h1 className="text-4xl md:text-5xl font-bold leading-tight">{post.title}</h1>
-                </header>
-            </GlitchElement>
-
-            <GlitchElement delay={0.2}>
-                <div className="prose prose-lg max-w-none prose-headings:font-bold prose-headings:uppercase prose-a:text-blue-600 prose-blockquote:border-l-4 prose-blockquote:border-brand prose-blockquote:bg-gray-50 prose-blockquote:py-2 prose-blockquote:px-4 prose-code:bg-gray-100 prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-code:font-mono font-sans text-gray-800">
-                    <ReactMarkdown>{post.content || post.excerpt}</ReactMarkdown>
+            <div className="mb-8">
+                {/* Meta Row */}
+                <div className="flex items-center gap-4 mb-6">
+                    <span className="bg-gray-200 text-gray-600 px-3 py-1 text-sm font-bold font-sans uppercase">
+                        LOGS
+                    </span>
+                    <span className="text-gray-400 font-mono text-sm">
+                        {post.date}
+                    </span>
                 </div>
-            </GlitchElement>
-        </article>
+
+                {/* Title & Close Row */}
+                <div className="flex justify-between items-start gap-8">
+                    <h1 className="text-3xl md:text-5xl font-bold leading-tight max-w-3xl">
+                        {post.title}
+                    </h1>
+                    <Link 
+                      to="/blog" 
+                      className="p-2 hover:bg-gray-100 rounded-full transition-colors flex-shrink-0"
+                      aria-label="Close"
+                    >
+                        <X size={40} className="text-black" />
+                    </Link>
+                </div>
+            </div>
+
+            {/* Separator */}
+            <hr className="border-gray-300 mb-12" />
+
+            <div className="prose prose-lg max-w-none prose-headings:font-bold prose-headings:uppercase prose-a:text-brand-dark prose-blockquote:border-l-4 prose-blockquote:border-brand prose-blockquote:bg-gray-50 prose-blockquote:py-2 prose-blockquote:px-4 prose-code:bg-gray-100 prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-code:font-mono font-sans text-gray-800">
+                <ReactMarkdown>{post.content || post.excerpt}</ReactMarkdown>
+            </div>
+            
+            {/* Bottom Decoration */}
+            <div className="mt-20 border-t border-dashed border-gray-200 pt-8 flex justify-between items-end opacity-50">
+               <div className="w-8 h-8 border border-gray-400 flex flex-col justify-center gap-1 p-1">
+                  <div className="w-4 h-px bg-gray-400"></div>
+                  <div className="w-full h-px bg-gray-400"></div>
+                  <div className="w-3 h-px bg-gray-400"></div>
+               </div>
+            </div>
+        </GlitchElement>
       </div>
     </div>
   );
