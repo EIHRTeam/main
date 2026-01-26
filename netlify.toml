@@ -1,0 +1,38 @@
+# Netlify 构建配置
+
+[build]
+  # 构建命令
+  command = "pnpm build:only"
+  # 发布目录
+  publish = "dist"
+  # Node 版本
+  [build.environment]
+    NODE_VERSION = "20"
+
+# 生产环境变量（敏感信息请在 Netlify 控制台设置）
+# [context.production.environment]
+#   VITE_API_URL = "https://eihr-blog-api.xxx.workers.dev/api"
+
+# 预览环境（PR 预览）
+# [context.deploy-preview.environment]
+#   VITE_API_URL = "https://eihr-blog-api-preview.xxx.workers.dev/api"
+
+# SPA 路由重定向 - 所有路径都指向 index.html
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# 缓存静态资源
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# 安全头
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

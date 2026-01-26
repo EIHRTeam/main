@@ -1,0 +1,10 @@
+# pnpm 工作区配置
+# 定义 monorepo 中的包位置
+packages:
+  # 根目录（前端项目）
+  - '.'
+  # 后端服务器（Express）
+  - 'server'
+  # Cloudflare Worker 后端
+  - 'worker'
+

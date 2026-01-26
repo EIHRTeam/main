@@ -3,10 +3,25 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "packageManager": "pnpm@9.15.4",
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=9.0.0"
+  },
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "dev:all": "pnpm --parallel -r run dev",
+    "build": "tsc --noEmit && vite build",
+    "build:only": "vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "server": "pnpm --filter eihr-blog-server run dev",
+    "server:start": "pnpm --filter eihr-blog-server run start",
+    "worker": "pnpm --filter eihr-blog-worker run dev",
+    "worker:deploy": "pnpm --filter eihr-blog-worker run cf:deploy",
+    "worker:generate": "pnpm --filter eihr-blog-worker run generate-posts",
+    "clean": "rimraf dist node_modules/.vite",
+    "clean:all": "rimraf dist node_modules/.vite server/node_modules/.cache"
   },
   "dependencies": {
     "framer-motion": "^12.29.0",
@@ -22,9 +37,12 @@
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.19",
     "@types/node": "^22.14.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
     "@vitejs/plugin-react": "^5.0.0",
     "autoprefixer": "^10.4.18",
     "postcss": "^8.4.35",
+    "rimraf": "^6.1.2",
     "tailwindcss": "^3.4.1",
     "typescript": "~5.8.2",
     "vite": "^6.2.0"

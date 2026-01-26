@@ -60,6 +60,13 @@ export interface ContentData {
     notFoundTitle: string;
     notFoundDesc: string;
     returnToArchive: string;
+    share: string;
+    shareMenu: {
+      system: string;
+      copy: string;
+      print: string;
+      copied: string;
+    };
   };
   contact: {
     title: string;

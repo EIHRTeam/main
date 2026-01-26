@@ -1,31 +1,14 @@
+/* 引入分包后的鸿蒙黑体 */
+/* Regular/400 */
+@import url("https://assets.hcaor.org/fonts/hmos/regular/result.css");
+/* Medium/500 */
+@import url("https://assets.hcaor.org/fonts/hmos/medium/result.css");
+/* Bold/700 */
+@import url("https://assets.hcaor.org/fonts/hmos/bold/result.css");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* 仅加载实际使用的字体权重 (400, 500, 700) 以优化性能 */
-@font-face {
-  font-family: 'HarmonyOS Sans SC';
-  src: url('https://assets.hcaor.org/fonts/hmos/HarmonyOS_Sans_SC_Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'HarmonyOS Sans SC';
-  src: url('https://assets.hcaor.org/fonts/hmos/HarmonyOS_Sans_SC_Medium.woff2') format('woff2');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'HarmonyOS Sans SC';
-  src: url('https://assets.hcaor.org/fonts/hmos/HarmonyOS_Sans_SC_Bold.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
 
 body {
   background-color: #ffffff;
@@ -252,4 +235,100 @@ body {
 
 .prose pre::-webkit-scrollbar-thumb:hover {
   background: #666;
+}
+
+/* ============================================
+   打印样式优化
+   ============================================ */
+@media print {
+  @page {
+    margin: 2cm;
+    size: auto;
+  }
+
+  body {
+    background-color: white !important;
+    color: black !important;
+  }
+
+  /* 隐藏所有具有 print:hidden 类的元素及其他通用隐藏 */
+  .print\:hidden,
+  nav,
+  footer,
+  .no-print {
+    display: none !important;
+  }
+  
+  /* 确保正文宽度自适应 */
+  .max-w-6xl, .max-w-none {
+    max-width: none !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* 链接显示 URL (可选，仅针对外部链接) */
+  a[href^="http"]:after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #555;
+    word-break: break-all;
+  }
+
+  /* 避免在标题、引用块、表格行中间分页 */
+  h1, h2, h3, h4, h5, h6, blockquote, tr {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* 标题后避免分页 */
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+  
+  /* 文章容器清理 */
+  article {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* 代码块打印优化：白底黑字，带边框 */
+  .prose pre {
+    background-color: #f5f5f5 !important;
+    border: 1px solid #ccc !important;
+    color: black !important;
+    white-space: pre-wrap !important; /* 允许换行防止溢出 */
+    word-break: break-all !important;
+    box-shadow: none !important;
+  }
+  
+  .prose pre code {
+    color: black !important;
+    text-shadow: none !important;
+  }
+  
+  /* 行内代码 */
+  .prose :not(pre) > code {
+    border: 1px solid #ddd;
+    background-color: #f9f9f9 !important;
+  }
+
+  /* 引用块 */
+  .prose blockquote {
+    border-left-color: #000 !important;
+    background-color: transparent !important;
+  }
+  
+  /* 底部版权信息 */
+  body::after {
+    content: "© Endfield Industry Human Resource Team. " attr(data-date);
+    display: block;
+    text-align: center;
+    font-size: 0.8em;
+    color: #666;
+    margin-top: 2cm;
+    border-top: 1px solid #ddd;
+    padding-top: 1cm;
+  }
 }

@@ -108,12 +108,26 @@ const AppLayout = () => {
   return (
     <div className="min-h-screen bg-white text-black font-sans selection:bg-brand">
         <m.div
-          className="fixed top-0 left-0 right-0 h-1 bg-brand z-50 origin-left"
+          className="fixed top-0 left-0 right-0 h-1 bg-brand z-50 origin-left print:hidden"
           style={{ scaleX }}
         />
 
         <Routes>
-            <Route element={<MainLayout content={t.footer} navLabels={t.nav} scrollToSection={handleNavigation} />}>
+            <Route element={
+                <>
+                  <div className="print:hidden"><ContourBackground /></div>
+                  <Suspense fallback={<div className="print:hidden"><PageLoader /></div>}>
+                    <Outlet />
+                  </Suspense>
+                  <div className="print:hidden">
+                    <Footer 
+                        content={t.footer} 
+                        navLabels={t.nav} 
+                        scrollToSection={handleNavigation}
+                    />
+                  </div>
+                </>
+            }>
                 <Route 
                   path="/" 
                   element={

@@ -45,10 +45,17 @@ export const zh: ContentData = {
     notFoundTitle: "404 // DATA_NOT_FOUND",
     notFoundDesc: "请求的文章不存在",
     returnToArchive: "Return to Archive",
+    share: "共享",
+    shareMenu: {
+      system: "共享",
+      copy: "复制链接",
+      print: "打印页面",
+      copied: "链接已复制",
+    },
   },
   contact: {
     title: "建立连接",
-    description: "无论你是想加入我们，还是只想打个招呼，我们随时欢迎新的连接。",
+    description: "无论你是想提出意见，还是只想打个招呼，我们都随时欢迎。",
     socials: "社交媒体",
     email: "staff@eihrteam.org",
     socialLinks: {  

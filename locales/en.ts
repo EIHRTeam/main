@@ -8,7 +8,7 @@ export const en: ContentData = {
     blog: "BLOG",
     blog_short: "BLOG",
     contact: "CONTACT",
-    logo_full: "EIHR Team",
+    logo_full: "EIHRTeam",
     logo_short: "EIHR",
   },
   hero: {
@@ -32,9 +32,9 @@ export const en: ContentData = {
     ],
   },
   blog: {
-    title: "LATEST LOGS",
+    title: "LATEST BLOGS",
     readMore: "Read More",
-    viewAll: "VIEW ALL LOGS",
+    viewAll: "VIEW ALL BLOGS",
     blogLink: "/blog",
     // i18n strings for blog pages
     loadError: "Failed to load posts",
@@ -45,10 +45,17 @@ export const en: ContentData = {
     notFoundTitle: "404 // DATA_NOT_FOUND",
     notFoundDesc: "The requested post does not exist",
     returnToArchive: "Return to Archive",
+    share: "SHARE",
+    shareMenu: {
+      system: "Share",
+      copy: "Copy Link",
+      print: "Print Page",
+      copied: "Copied!",
+    },
   },
   contact: {
     title: "CONNECT",
-    description: "Whether you want to join the team or just say hi, we are always open for new connections.",
+    description: "Whether you want to share your thoughts or just say hi, we are always welcome.",
     socials: "Social Media",
     email: "staff@eihrteam.org",
     socialLinks: {
