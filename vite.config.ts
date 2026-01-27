@@ -65,19 +65,6 @@ export default defineConfig(({ mode }) => ({
             if (id.includes('framer-motion') || id.includes('popmotion')) {
               return 'vendor-motion';
             }
-            // Markdown 渲染相关
-            if (
-              id.includes('react-markdown') ||
-              id.includes('remark') ||
-              id.includes('rehype') ||
-              id.includes('highlight.js') ||
-              id.includes('unified') ||
-              id.includes('mdast') ||
-              id.includes('hast') ||
-              id.includes('micromark')
-            ) {
-              return 'vendor-markdown';
-            }
             // 其他第三方库
             return 'vendor';
           }
