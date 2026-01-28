@@ -6,15 +6,21 @@
 /* Bold/700 */
 @import url("https://assets.hcaor.org/fonts/hmos/bold/result.css");
 
+:root {
+  color-scheme: light;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  background-color: #ffffff;
-  color: #0A0A0A;
+  background-color: #ffffff !important;
+  color: #0A0A0A !important;
   overflow-x: hidden;
   font-family: 'HarmonyOS Sans SC', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 ::selection {
