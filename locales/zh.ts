@@ -79,6 +79,6 @@ export const zh: ContentData = {
       { label: "PRTS Wiki", url: "http://prts.wiki/" },
       { label: "森空岛 Wiki", url: "https://wiki.skland.com/endfield" },
     ],
-    copyright: `© ${new Date().getFullYear()} Endfield Industry Human Resource Team. All Rights Reserved.`,
+    copyright: `© ${new Date().getFullYear()} Endfield Industries Human Resource Team. All Rights Reserved.`,
   }
 };

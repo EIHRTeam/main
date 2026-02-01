@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Undo2 } from 'lucide-react';
 import GlitchElement from '../components/GlitchElement';
 import colorBar from '../assets/color-bar.png';
 
@@ -34,10 +35,11 @@ const NotFound: React.FC = () => {
              <GlitchElement delay={0.4}>
                 <div className="text-center max-w-md mb-16 space-y-4">
                     <p className="text-gray-800 font-bold font-sans text-lg">
-                        // 警告：扇区数据已损坏
+                        您正尝试访问的页面不存在或已被删除，请检查您输入的地址是否正确。
                     </p>
-                    <p className="text-gray-500 font-mono text-sm">
-                        您尝试访问的节点 [UNDEFINED] 不存在或已被终末地工业回收。请立即撤离至安全区域。
+                    <p className="text-gray-500 text-sm">
+                        如您通过我们提供的连接来到此页面，请联系 <a href="mailto:staff@eihrteam.org">staff@eihrteam.org</a> 获取支持。
+                        <br></br>如您通过其它网站中的链接来到此页面，请通知对应网站的管理员。
                     </p>
                 </div>
             </GlitchElement>
@@ -45,9 +47,10 @@ const NotFound: React.FC = () => {
             <GlitchElement delay={0.6}>
                  <Link 
                   to="/" 
-                  className="group relative px-8 py-4 bg-black text-white font-bold font-mono text-sm uppercase tracking-widest overflow-hidden hover:text-black transition-colors duration-300 inline-block border border-black"
+                  className="group relative px-8 py-4 bg-black text-white text-sm uppercase tracking-widest overflow-hidden hover:text-black transition-colors duration-300 inline-block border border-black"
                 >
-                  <span className="relative z-10">&lt; RETURN_TO_BASE /&gt;</span>
+                  <span className="relative z-10">返回首页</span>
+                 <Undo2 className="w-4 h-4 ml-2 inline-block transition-transform duration-300 group-hover:-translate-x-1" />
                   <div className="absolute inset-0 bg-brand translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-300"></div>
                 </Link>
             </GlitchElement>
