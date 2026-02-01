@@ -76,7 +76,7 @@ export const en: ContentData = {
     friendLinks: "FRIENDLY LINKS",
     friendLinksItems: [
       { label: "Endfield Official", url: "https://endfield.hypergryph.com/en" },
-      { label: "PRTS Wiki", url: "http://prts.wiki/" },
+      { label: "PRTS Wiki", url: "https://prts.wiki/" },
       { label: "Skland Wiki", url: "https://wiki.skland.com/endfield" },
     ],
     copyright: `© ${new Date().getFullYear()} Endfield Industries Human Resource Team. All Rights Reserved.`,

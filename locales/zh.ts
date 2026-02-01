@@ -76,7 +76,7 @@ export const zh: ContentData = {
     friendLinks: "友情链接",
     friendLinksItems: [
       { label: "明日方舟：终末地 官网", url: "https://endfield.hypergryph.com/" },
-      { label: "PRTS Wiki", url: "http://prts.wiki/" },
+      { label: "PRTS Wiki", url: "https://prts.wiki/" },
       { label: "森空岛 Wiki", url: "https://wiki.skland.com/endfield" },
     ],
     copyright: `© ${new Date().getFullYear()} Endfield Industries Human Resource Team. All Rights Reserved.`,
