@@ -23,6 +23,7 @@ export interface ContentData {
     contact: string;
     logo_full: string;
     logo_short: string;
+    copyright_statement: string;
   };
   hero: {
     title1: string;

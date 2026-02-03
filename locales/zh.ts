@@ -10,6 +10,7 @@ export const zh: ContentData = {
     contact: "联系",
     logo_full: "终末地工业人事部",
     logo_short: "终末地人事部",
+    copyright_statement: "著作权声明",
   },
   hero: {
     title1: "极致攻略",
@@ -17,7 +18,7 @@ export const zh: ContentData = {
     subtitle: "我们是？",
     cta: "关注我们",
     stat1_label: "篇深度指南（假的）",
-    stat2_label: "活跃贡献者（也是假的）",
+    stat2_label: "活跃贡献者",
   },
   about: {
     title: "// 关于我们",
@@ -26,7 +27,7 @@ export const zh: ContentData = {
   projects: {
     title: "项目与资源",
     items: [
-      { id: 1, title: "成就数据库", category: "工具", desc: "全面的终末地蚀刻章数据库。", link: "https://medal.eihrteam.org/" },
+      { id: 1, title: "成就跟踪器", category: "工具", desc: "全面的终末地蚀刻章数据库。", link: "https://medal.eihrteam.org/" },
       { id: 2, title: "敬请期待", category: "Coming S∞n™", desc: "别急，让我先急" },
       { id: 3, title: "敬请期待", category: "Coming S∞n™", desc: "点击输入文本" },
     ],
@@ -59,7 +60,7 @@ export const zh: ContentData = {
     socials: "社交媒体",
     email: "staff@eihrteam.org",
     socialLinks: {  
-      bilibili: "https://space.bilibili.com/3546983822264909",
+      bilibili: "https://space.bilibili.com/571500824",
       xiaohongshu: "",
       skland: "https://www.skland.com/profile?id=7932577420418",
       github: "https://github.com/EIHRTeam"
@@ -69,7 +70,7 @@ export const zh: ContentData = {
     nav: "网站导航",
     quickLinks: "快捷链接",
     quickLinksItems: [
-      { label: "成就数据库", url: "https://medal.eihrteam.org" },
+      { label: "成就跟踪器", url: "https://medal.eihrteam.org" },
       { label: "INTEGRATED ICON SYSTEM", url: "https://iis.eihrteam.org" },
       { label: "ASR Platform", url: "https://asr.eihrteam.org" },
     ],

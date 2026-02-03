@@ -10,11 +10,12 @@ export const en: ContentData = {
     contact: "CONTACT",
     logo_full: "EIHRTeam",
     logo_short: "EIHR",
+    copyright_statement: "COPYRIGHT",
   },
   hero: {
     title1: "ULTIMATE",
     title2: "STRATEGY",
-    subtitle: "We are?",
+    subtitle: "And we are?/n",
     cta: "FOLLOW US",
     stat1_label: "Deep Guides (Fake)",
     stat2_label: "Contributors (Also Fake)",
@@ -58,8 +59,8 @@ export const en: ContentData = {
     description: "Whether you want to share your thoughts or just say hi, we are always welcome.",
     socials: "Social Media",
     email: "staff@eihrteam.org",
-    socialLinks: {
-      bilibili: "https://space.bilibili.com/3546983822264909",
+    socialLinks: {  
+      bilibili: "https://space.bilibili.com/571500824",
       xiaohongshu: "",
       skland: "https://www.skland.com/profile?id=7932577420418",
       github: "https://github.com/EIHRTeam"

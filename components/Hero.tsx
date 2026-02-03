@@ -43,12 +43,12 @@ const Hero: React.FC<HeroProps> = ({ content, scrollToSection }) => {
               </button>
               <div className="flex gap-8 items-center px-6">
                 <div>
-                  <span className="block text-2xl font-bold font-mono">500+</span>
+                  <span className="block text-2xl font-bold font-mono">114514</span>
                   <span className="text-xs text-gray-500 uppercase">{content.stat1_label}</span>
                 </div>
                 <div className="w-px h-8 bg-gray-300"></div>
                 <div>
-                  <span className="block text-2xl font-bold font-mono">42k</span>
+                  <span className="block text-2xl font-bold font-mono">8</span>
                   <span className="text-xs text-gray-500 uppercase">{content.stat2_label}</span>
                 </div>
               </div>
