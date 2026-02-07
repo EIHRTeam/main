@@ -29,7 +29,7 @@ app.use(express.json());
 
 /**
  * 获取所有博客文章列表
- * GET /api/posts
+ * GET /api/posts?lang=zh
  * 
  * 返回格式:
  * {
@@ -41,13 +41,22 @@ app.use(express.json());
  */
 app.get('/api/posts', async (req, res) => {
   try {
-    const files = await fs.readdir(POSTS_DIR);
+    const lang = req.query.lang === 'en' ? 'en' : 'zh';
+    const langDir = path.join(POSTS_DIR, lang);
+    
+    try {
+      await fs.access(langDir);
+    } catch {
+      return res.json({ posts: [] });
+    }
+
+    const files = await fs.readdir(langDir);
     const mdFiles = files.filter(f => f.endsWith('.md'));
     
     const posts = await Promise.all(
       mdFiles.map(async (filename) => {
         const id = path.basename(filename, '.md');
-        const filePath = path.join(POSTS_DIR, filename);
+        const filePath = path.join(langDir, filename);
         const content = await fs.readFile(filePath, 'utf-8');
         const { data, content: body } = matter(content);
         
@@ -80,7 +89,7 @@ app.get('/api/posts', async (req, res) => {
 
 /**
  * 获取单篇博客文章
- * GET /api/posts/:id
+ * GET /api/posts/:id?lang=zh
  * 
  * 返回格式:
  * {
@@ -94,7 +103,8 @@ app.get('/api/posts', async (req, res) => {
 app.get('/api/posts/:id', async (req, res) => {
   try {
     const { id } = req.params;
-    const filePath = path.join(POSTS_DIR, `${id}.md`);
+    const lang = req.query.lang === 'en' ? 'en' : 'zh';
+    const filePath = path.join(POSTS_DIR, lang, `${id}.md`);
     
     try {
       await fs.access(filePath);

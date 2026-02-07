@@ -34,7 +34,7 @@ const BlogList: React.FC<BlogListProps> = ({ content, navContent, lang, setLang,
     const loadPosts = async () => {
       try {
         setLoading(true);
-        const data = await fetchPosts();
+        const data = await fetchPosts(lang);
         setPosts(data);
         setError(null);
       } catch (err) {
@@ -46,7 +46,7 @@ const BlogList: React.FC<BlogListProps> = ({ content, navContent, lang, setLang,
     };
 
     loadPosts();
-  }, [content.loadError]);
+  }, [content.loadError, lang]);
 
   return (
     <div className="min-h-screen bg-white text-black">

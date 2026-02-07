@@ -68,6 +68,16 @@ export interface ContentData {
       print: string;
       copied: string;
     };
+    translationBanner: {
+      machine: string; // e.g., "此文章由机器翻译自 {lang}"
+      manual: string;  // e.g., "此文章翻译自 {lang}"
+      originalLang: {
+        en: string;
+        zh: string;
+        ja: string;
+        [key: string]: string;
+      };
+    };
   };
   contact: {
     title: string;

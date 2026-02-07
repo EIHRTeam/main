@@ -1,0 +1,39 @@
+[package]
+name = "eihr-blog-rs"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+axum = "0.7.5"
+tokio = { version = "1.37.0", features = ["full"] }
+serde = { version = "1.0.197", features = ["derive"] }
+serde_json = "1.0.116"
+tower-http = { version = "0.5.2", features = ["cors", "trace", "fs"] }
+gray_matter = "0.2.6"
+tracing = "0.1.40"
+tracing-subscriber = { version = "0.3.18", features = ["env-filter"] }
+anyhow = "1.0.82"
+walkdir = "2.5.0"
+clap = { version = "4.5.4", features = ["derive"] }
+
+[package.metadata.deb]
+maintainer = "EIHR Team <staff@eihrteam.org>"
+copyright = "2024-2026, EIHR Team"
+license-file = ["../LICENSE", "4"] # 假设 LICENSE 文件在根目录，若无则移除此行或指向有效文件
+depends = "$auto"
+section = "web"
+priority = "optional"
+assets = [
+    ["target/release/eihr-blog-rs", "usr/bin/", "755"],
+    ["../server/posts/", "var/lib/eihr-blog-rs/posts/", "644"],
+    ["../README.md", "usr/share/doc/eihr-blog-rs/README", "644"],
+]
+# systemd service unit file
+systemd-units = { unit-name = "eihr-blog-rs", enable = true }
+
+[profile.release]
+lto = true
+codegen-units = 1
+strip = true
+opt-level = "z"  # 针对体积优化，也可以是用 "3" 针对速度
+panic = "abort"

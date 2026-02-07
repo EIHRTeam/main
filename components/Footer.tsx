@@ -34,7 +34,6 @@ const Footer: React.FC<FooterProps> = ({ content, navLabels, scrollToSection }) 
             <li><button onClick={() => scrollToSection('blog')} className="hover:text-white transition-colors">{navLabels.blog}</button></li>
             <li><button onClick={() => scrollToSection('contact')} className="hover:text-white transition-colors">{navLabels.contact}</button></li>
             <li><a href="https://eihrteam.org/blog/copyright" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">{navLabels.copyright_statement}</a></li>
-            <li><button onClick={() => scrollToSection('copyright')} className="hover:text-white transition-colors">{navLabels.copyright}</button></li>
           </ul>
         </div>
 

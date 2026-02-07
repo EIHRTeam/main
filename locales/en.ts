@@ -10,7 +10,7 @@ export const en: ContentData = {
     contact: "CONTACT",
     logo_full: "EIHRTeam",
     logo_short: "EIHR",
-    copyright_statement: "COPYRIGHT",
+    copyright_statement: "COPYRIGHT (CHINESE)",
   },
   hero: {
     title1: "ULTIMATE",
@@ -52,6 +52,17 @@ export const en: ContentData = {
       copy: "Copy Link",
       print: "Print Page",
       copied: "Copied!",
+    },
+    translationBanner: {
+      machine: "This article was machine translated from",
+      manual: "This article was translated from",
+      originalLang: {
+        en: "English",
+        zh: "Chinese",
+        ja: "Japanese",
+        ko: "Korean",
+        ru: "Russian",
+      },
     },
   },
   contact: {

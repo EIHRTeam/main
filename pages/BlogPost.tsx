@@ -5,16 +5,46 @@ import remarkGfm from 'remark-gfm';
 import rehypeHighlight from 'rehype-highlight';
 import { AnimatePresence, m } from 'framer-motion';
 import GlitchElement from '../components/GlitchElement';
-import { ContentData, ApiPostDetail } from '../types';
+import { ContentData, ApiPostDetail, Language } from '../types';
 import { fetchPost } from '../services/blog';
-import { X, Share2, Link as LinkIcon, Printer, Check } from 'lucide-react';
+import { X, Share2, Link as LinkIcon, Printer, Check, Info, AlertTriangle } from 'lucide-react';
 
 // 默认页面标题
 const DEFAULT_TITLE = 'EIHR Team // 终末地工业人事部';
 
 interface BlogPostProps {
   content: ContentData['blog'];
+  lang: Language;
 }
+
+// TranslationBanner Component
+const TranslationBanner: React.FC<{ tags: string[], content: ContentData['blog']['translationBanner'] }> = ({ tags, content }) => {
+  if (!tags || tags.length === 0) return null;
+  
+  const machineTag = tags.find(t => t.startsWith('机翻_'));
+  const manualTag = tags.find(t => t.startsWith('翻译_'));
+
+  if (!machineTag && !manualTag) return null;
+
+  const isMachine = !!machineTag;
+  const tag = (machineTag || manualTag)!;
+  const langCode = tag.split('_')[1];
+  const langName = langCode ? (content.originalLang[langCode] || langCode) : '';
+
+  const message = isMachine 
+    ? `${content.machine} ${langName}`
+    : `${content.manual} ${langName}`;
+
+  return (
+    <div className={`mb-6 px-4 py-3 border flex items-start md:items-center gap-3 text-sm font-mono leading-relaxed print:hidden
+      ${isMachine ? 'bg-[#FFFBEB] border-[#FCD34D] text-[#92400E]' : 'bg-[#EFF6FF] border-[#BFDBFE] text-[#1E3A8A]'}`}>
+      <div className="mt-0.5 md:mt-0 flex-shrink-0">
+        {isMachine ? <AlertTriangle size={16} /> : <Info size={16} />}
+      </div>
+      <div>{message}</div>
+    </div>
+  );
+};
 
 // ShareMenu Component
 const ShareMenu: React.FC<{ content: ContentData['blog'] }> = ({ content }) => {
@@ -111,7 +141,7 @@ const ShareMenu: React.FC<{ content: ContentData['blog'] }> = ({ content }) => {
   );
 };
 
-const BlogPost: React.FC<BlogPostProps> = ({ content }) => {
+const BlogPost: React.FC<BlogPostProps> = ({ content, lang }) => {
   const { id } = useParams<{ id: string }>();
   const [post, setPost] = useState<ApiPostDetail | null>(null);
   const [loading, setLoading] = useState(true);
@@ -123,7 +153,7 @@ const BlogPost: React.FC<BlogPostProps> = ({ content }) => {
       
       try {
         setLoading(true);
-        const data = await fetchPost(id);
+        const data = await fetchPost(id, lang);
         setPost(data);
         setError(null);
       } catch (err) {
@@ -139,7 +169,7 @@ const BlogPost: React.FC<BlogPostProps> = ({ content }) => {
     };
 
     loadPost();
-  }, [id, content.loadPostError]);
+  }, [id, content.loadPostError, lang]);
 
   // 动态设置页面标题
   useEffect(() => {
@@ -234,6 +264,11 @@ const BlogPost: React.FC<BlogPostProps> = ({ content }) => {
                   </Link>
                 </div>
             </div>
+
+            {/* Translation Banner */}
+            {post.tags && (
+              <TranslationBanner tags={post.tags} content={content.translationBanner} />
+            )}
 
             {/* Subtle Divider */}
             <div className="h-[1px] bg-[#EAEAEA] w-full mb-16 print:mb-8 print:bg-black" />

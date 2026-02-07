@@ -154,7 +154,7 @@ const AppLayout = () => {
                 <Route 
                   path="/blog/:id" 
                   element={
-                    <BlogPost content={t.blog} />
+                    <BlogPost content={t.blog} lang={lang} />
                   } 
                 />
             </Route>

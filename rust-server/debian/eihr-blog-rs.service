@@ -1,0 +1,30 @@
+[Unit]
+Description=EIHR Blog Backend (Rust)
+After=network.target
+
+[Service]
+Type=simple
+# 在 Debian 上，通常使用 www-data 运行 Web 服务
+User=www-data
+Group=www-data
+
+# 核心配置通过环境变量传递
+Environment=RUST_LOG=info
+Environment=HOST=0.0.0.0
+Environment=PORT=3002
+Environment=POSTS_DIR=/var/lib/eihr-blog-rs/posts
+
+# 启动命令
+ExecStart=/usr/bin/eihr-blog-rs
+
+# 自动重启策略
+Restart=always
+RestartSec=5
+
+# 安全限制 (Hardening)
+ProtectSystem=full
+PrivateTmp=true
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target

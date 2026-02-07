@@ -17,6 +17,7 @@
     "typecheck": "tsc --noEmit",
     "server": "pnpm --filter eihr-blog-server run dev",
     "server:start": "pnpm --filter eihr-blog-server run start",
+    "server:rust": "cd rust-server && cargo run --release -- --posts-dir ../server/posts",
     "worker": "pnpm --filter eihr-blog-worker run dev",
     "worker:deploy": "pnpm --filter eihr-blog-worker run cf:deploy",
     "worker:generate": "pnpm --filter eihr-blog-worker run generate-posts",
