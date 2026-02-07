@@ -1,0 +1,19 @@
+{
+  "name": "eihr-blog-worker",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "cf:deploy": "npm run generate-posts && wrangler deploy",
+    "cf:tail": "wrangler tail",
+    "generate-posts": "node scripts/generate-posts.cjs"
+  },
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "hono": "^4.6.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241127.0",
+    "wrangler": "^4.60.0"
+  }
+}

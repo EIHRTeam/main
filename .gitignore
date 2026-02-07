@@ -48,7 +48,13 @@ yarn.lock
 # Fonts
 /assets/HarmonyOS_Sans_SC_*/
 
-# Backend
-/worker/
+# Rust Backend
+rust-server/target/
+
+# Backend and Workers
 .wrangler/
 **/.wrangler/
+worker/src/posts.ts
+
+# Netlify
+.netlify
