@@ -36,6 +36,7 @@ pnpm deploy
 | `/` | GET | 健康检查 |
 | `/api/posts` | GET | 获取所有文章列表 |
 | `/api/posts/:id` | GET | 获取单篇文章 |
+| `/sitemap.xml` | GET | 自动生成站点地图（首页、博客列表、文章详情） |
 
 ## 更新文章内容
 

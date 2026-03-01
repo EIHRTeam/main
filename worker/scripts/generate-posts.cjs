@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const matter = require('gray-matter');
 
-const postsDir = path.resolve(__dirname, '../../server/posts');
+const postsDir = path.resolve(__dirname, '../posts');
 const outputFile = path.resolve(__dirname, '../src/posts.ts');
 
 function generate() {
@@ -21,8 +21,8 @@ function generate() {
       if (path.extname(file) !== '.md') return;
 
       const id = path.basename(file, '.md');
-      const content = fs.readFileSync(path.join(langDir, file), 'utf8');
-      const { data, content: body } = matter(content);
+      const fileContent = fs.readFileSync(path.join(langDir, file), 'utf8');
+      const { data, content: body } = matter(fileContent);
 
       // 生成摘要：取正文前150个字符
       const excerpt = data.excerpt || body.replace(/[#*`>\-\n]/g, ' ').trim().slice(0, 150) + '...';
@@ -34,7 +34,7 @@ function generate() {
         title: data.title || id,
         date: date,
         tags: data.tags || [],
-        content: content, 
+        content: body, // 使用去除 Frontmatter 后的正文
         excerpt: excerpt
       };
     });
@@ -43,7 +43,7 @@ function generate() {
   const output = `/**
  * 博客文章数据源
  * 
- * 此文件由 worker/scripts/generate-posts.js 自动生成
+ * 此文件由 worker/scripts/generate-posts.cjs 自动生成
  * 生成时间: ${new Date().toISOString()}
  */
 

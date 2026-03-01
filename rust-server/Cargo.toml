@@ -14,7 +14,7 @@ tracing = "0.1.40"
 tracing-subscriber = { version = "0.3.18", features = ["env-filter"] }
 anyhow = "1.0.82"
 walkdir = "2.5.0"
-clap = { version = "4.5.4", features = ["derive"] }
+clap = { version = "4.5.4", features = ["derive", "env"] }
 
 [package.metadata.deb]
 maintainer = "EIHR Team <staff@eihrteam.org>"
