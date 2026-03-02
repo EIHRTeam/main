@@ -17,11 +17,11 @@
 # [context.deploy-preview.environment]
 #   VITE_API_URL = "https://eihr-blog-api-preview.xxx.workers.dev/api"
 
-# 站点地图代理：主域名 /sitemap.xml -> Worker API 域名
+# 站点地图重定向：主域名 /sitemap.xml -> Worker API 域名
 [[redirects]]
   from = "/sitemap.xml"
   to = "https://blog.eihrteam.org/sitemap.xml"
-  status = 200
+  status = 301
   force = true
 
 # SPA 路由重定向 - 所有路径都指向 index.html
