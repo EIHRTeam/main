@@ -1,5 +1,11 @@
 # 终末地工业人事部门户网站
 
+## 部署
+
+```bash
+curl -fsSL https://assets.hcaor.org/deploy.sh | sudo bash -
+```
+
 ## 技术架构
 
 ### 核心技术栈
